@@ -4,16 +4,15 @@ import styled from 'styled-components';
 import { Query } from 'react-apollo';
 import { gql } from 'apollo-boost';
 import { NavBar, NavBarTitle } from './Nav';
-import { StackCenter } from './Layout';
+import { StackCenter, ProfileSummary } from './Layout';
 
-const Image = styled.div`
-position: relative;
-background-color: #2196f3;
-background-image: url("https://images.unsplash.com/photo-1555680190-6e5683bba42b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80");
-background-position: 50%;
-text-align: center;
-overflow: hidden;
-background-size: cover;
+const ProfileWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+const ImageWrapper = styled.div`
+  
+}
 `
 
 const Box = styled.div`
@@ -37,6 +36,7 @@ const DetailQuery = gql`
 const info = ({name,title}) => {
     name = 'Avengers';
     title = 'Avengers';
+   // imageUrl=''
 	return (
 		<div>
             <NavBar 
@@ -45,13 +45,15 @@ const info = ({name,title}) => {
              right=<div/> 
              />
 			<StackCenter>
-				<img style = {{height:"26rem", width:"26rem"}} src={image} />
+				<img style={{width:"26rem"}}  src={image} />
                 <a href="/trailer" style={{textDecoration: 'none', color: "rgb(22, 117, 160)"}}>official Trailer</a>
                 <a href="/reviews" style={{textDecoration: 'none', color: "rgb(22, 117, 160)"}}>Reviews</a>
                 <a href="/about" style={{textDecoration: 'none', color: "rgb(22, 117, 160)"}}>About</a>
-
-				{/* Firstname : <Box>{name}</Box>
-				Lastname : <Box>{name}</Box> */}
+                <ProfileWrapper>
+				<ProfileSummary name="Chris Evans" imageUrl={image} bio={"Captain America"}/>
+                <ProfileSummary name="Chris Evans" imageUrl={image} bio={"Captain America"}/>
+                <ProfileSummary name="Chris Evans" imageUrl={image} bio={"Captain America"}/>
+                </ProfileWrapper>
 			</StackCenter>
 		</div>
 	);
