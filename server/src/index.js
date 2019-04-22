@@ -3,8 +3,8 @@ const { prisma } = require('./generated/prisma-client')
 
 const resolvers = {
   Query: {
-    display: (parent, args, context, { id }) => {
-      return context.prisma.agencies({ id })
+    display: (parent, args, context) => {
+      return context.prisma.posts
     },
     // drafts: (parent, args, context) => {
     //   return context.prisma.posts({ where: { published: false } })

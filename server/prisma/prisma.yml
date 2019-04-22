@@ -1,5 +1,5 @@
 # Specifies the HTTP endpoint of your Prisma API (deployed to a Prisma Demo server).
-endpoint: https://sherpafeet-2e3235c448.herokuapp.com/sherpa-prisma/dev
+endpoint: https://sherpa-prisma-git-master.jaikant.now.sh/
 
 # Defines your models, each model is mapped to the database as a table.
 datamodel: datamodel.prisma

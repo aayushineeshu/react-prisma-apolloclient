@@ -37,9 +37,8 @@ type PageInfo {
 
 type Post {
   id: ID!
-  published: Boolean!
-  title: String!
-  content: String!
+  firstname: String!
+  lastname: String!
 }
 
 type PostConnection {

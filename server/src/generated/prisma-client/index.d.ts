@@ -32,27 +32,19 @@ export interface Prisma {
    * Queries
    */
 
-  post: (where: PostWhereUniqueInput) => PostPromise;
+  display: ( id ) => PostPromise;
   posts: (
     args?: {
-      where?: PostWhereInput;
-      orderBy?: PostOrderByInput;
-      skip?: Int;
-      after?: String;
-      before?: String;
-      first?: Int;
-      last?: Int;
+      id?: String
+      firstname?: String;
+      lastname?: String;
     }
   ) => FragmentableArray<Post>;
   postsConnection: (
     args?: {
-      where?: PostWhereInput;
-      orderBy?: PostOrderByInput;
-      skip?: Int;
-      after?: String;
-      before?: String;
-      first?: Int;
-      last?: Int;
+      id?: String
+      firstname?: String;
+      lastname?: String;
     }
   ) => PostConnectionPromise;
   node: (args: { id: ID_Output }) => Node;

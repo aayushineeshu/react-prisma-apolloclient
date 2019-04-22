@@ -1,6 +1,3 @@
-type Query {
-  display: [display!]!
-}
 
 type display {
   id: ID!
