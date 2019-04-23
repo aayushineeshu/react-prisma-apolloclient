@@ -35,7 +35,7 @@ export const NavBar = ({
   </NavBarWrapper>
 );
 export const NavBarTitle = styled.div`
-  color: rgb(128,128,128);
+  color: #20232a;
   margin: 0;
   padding: 0;
   font-size: 1em;

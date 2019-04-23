@@ -6,6 +6,7 @@ import ApolloClient from "apollo-boost";
 import * as serviceWorker from './serviceWorker';
 import gql from "graphql-tag";
 import { ApolloProvider } from 'react-apollo';
+import MyappRoutes from "./MyappRoutes";
 
 const client = new ApolloClient({
     uri: "https://sherpa-prisma-git-master.jaikant.now.sh/"
@@ -27,7 +28,7 @@ client
     .then(result => console.log(result));
 ReactDOM.render(
     <ApolloProvider client={client}>
-        <Info />
+        <MyappRoutes />
     </ApolloProvider>,
 
     document.getElementById('root'));
