@@ -48,9 +48,9 @@ const Reviews = () => {
                       <Form>
                         <LabeledField
                           type="email"
-                          name="email"
-                          label={`Email`}
-                          placeholder={`Email`}
+                          name="name"
+                          label={`name`}
+                          placeholder={`Name`}
                           required
                         />
                         <LabeledField

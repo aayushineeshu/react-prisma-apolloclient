@@ -1,5 +1,6 @@
 import React from 'react';
 import './Content.css';
+import styled from 'styled-components';
 
 export const Ratings = () => {
     return(
@@ -15,5 +16,22 @@ export const Ratings = () => {
     <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
     <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
 </fieldset>
+    )
+}
+
+export const StyledButton = styled.button`
+  border: 2px solid ;
+  color: rgb(161, 0, 0);
+  font-size: 1em;
+  min-height: 2.5rem;
+  min-width: 10rem;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 20px;
+`;
+
+export const Button = ({ label, onClick, to, ...props }) => {
+    return (
+        <StyledButton {...props} label={label} onClick={onClick} />
     )
 }
