@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Info from './components/Info';
 import ApolloClient from "apollo-boost";
 import * as serviceWorker from './serviceWorker';
 import gql from "graphql-tag";

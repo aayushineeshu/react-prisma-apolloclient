@@ -5,6 +5,7 @@ import {
     Field as FormikField,
     ErrorMessage as FormikErrorMessage
   } from 'formik';
+import { Ratings as Rating } from './Content';
 
   export const Label = styled.label`
   text-transform: uppercase;
@@ -13,7 +14,7 @@ import {
   margin-left: 0.2em;
   font-size: 0.8em;
   font-weight: 600;
-  color: ${props => props.theme.tertiary};
+  color: #191818;
 `;
 
 export const Field = styled(FormikField)`
@@ -67,3 +68,10 @@ export const LabeledField = ({ name, label, left, right, ...rest }) => (
     />
   </LabeledFieldWrapper>
 );
+
+export const RatingField = ({ name, label, children, ...props}) => {
+   return(
+     <Rating
+     />
+   )
+}

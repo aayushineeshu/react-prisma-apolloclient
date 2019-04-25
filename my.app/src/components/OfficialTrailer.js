@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ReactPlayer from 'react-player';
 import { NavBar, NavBarTitle } from './Nav';
@@ -7,10 +7,10 @@ import { Button } from './Content';
 import { ReactComponent as HeadsetTwoTone } from '../icons/HeadsetTwoTone.svg';
 import { ReactComponent as Like } from '../icons/heart.svg';
 
-const Text = styled.div`
+export const Text = styled.div`
     font-size: ${props => props.fontSize? props.fontSize : "16px"};
 	font-weight: 600;
-    color: #034f6d;
+    color: ${props => props.color? props.color: "#034f6d"};
     text-align: center;
 	padding: ${props => (props.padding ? props.padding : 'none')};
 `;
@@ -32,6 +32,10 @@ const officialTrailer = props => {
     const subscription = () => {
         subscribe ? setSubscribe(false) : setSubscribe(true);
     }
+
+    useEffect(()=>{
+        document.title =`You clicked the ${count} times`
+      });
 
 	return (
 		<div>
