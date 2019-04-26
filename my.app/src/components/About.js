@@ -68,17 +68,45 @@ class About extends Component {
 
   componentDidMount(){
     this.getData();
-    fetch('https://sherpa-prisma-git-master.jaikant.now.sh/')
-      .then(res => res.json)
-      .then(function(data) {
-        console.log('Request succeeded with JSON response', data);
-      })
-      .then(json => {
-          this.setState({
-              isLoaded:true,
-              items:json,
-          })
-      })
+     
+    const query = `
+ query {
+  agencies{
+    owner{
+      firstName
+       lastName
+    }
+  }
+ }
+`;
+
+    const url = "https://sherpa-prisma-git-master.jaikant.now.sh/";
+    const opts = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query })
+    };
+    fetch(url, opts)
+      .then(res => res.json())
+      // .then(res.json=() => {
+      //   this.setState({
+      //               isLoaded:true,
+      //           })
+      // })
+      .then(console.log)
+      .catch(console.error);
+
+    // fetch('https://sherpa-prisma-git-master.jaikant.now.sh/')
+    //   .then(res => res.json)
+    //   .then(function(data) {
+    //     console.log('Request succeeded with JSON response', data);
+    //   })
+    //   .then(json => {
+    //       this.setState({
+    //           isLoaded:true,
+    //           items:json,
+    //       })
+    //   })
   }
 
   componentDidUpdate(){
@@ -88,9 +116,6 @@ class About extends Component {
 
   render() {
       const {isLoaded, items} = this.state;
-        var obj = items;
-        JSON.stringify(obj);
-        console.log("obj",obj)
 
       if(!isLoaded){
         return(
@@ -106,7 +131,6 @@ class About extends Component {
                    right=<div/> 
                    />    
                    <ul>
-                   {console.log("items", items)}
                    
                        {/* {items.map(item => (
                            <li >
